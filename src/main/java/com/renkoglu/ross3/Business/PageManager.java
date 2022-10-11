@@ -3,10 +3,12 @@ package com.renkoglu.ross3.Business;
 import com.renkoglu.ross3.DataAccess.PageDAO;
 import com.renkoglu.ross3.Entities.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class PageManager implements IService<Page>{
 
     @Autowired

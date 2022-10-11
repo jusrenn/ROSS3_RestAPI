@@ -11,12 +11,12 @@ public class Food implements IEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "Title")
-    private String title;
+    @Column(name = "Name")
+    private String name;
 
     public Food(int id, String title) {
         this.id = id;
-        this.title = title;
+        this.name = name;
     }
 
     public Food() {}
@@ -29,11 +29,11 @@ public class Food implements IEntity{
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 }
