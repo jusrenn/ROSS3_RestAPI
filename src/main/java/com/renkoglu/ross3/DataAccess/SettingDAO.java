@@ -1,6 +1,5 @@
 package com.renkoglu.ross3.DataAccess;
 
-import com.renkoglu.ross3.Entities.Member;
 import com.renkoglu.ross3.Entities.Setting;
 
 import java.util.List;
