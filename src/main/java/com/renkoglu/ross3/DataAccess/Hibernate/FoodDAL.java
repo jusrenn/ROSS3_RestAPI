@@ -1,7 +1,7 @@
 package com.renkoglu.ross3.DataAccess.Hibernate;
 
-import com.renkoglu.ross3.DataAccess.CategoryDAO;
-import com.renkoglu.ross3.Entities.Category;
+import com.renkoglu.ross3.DataAccess.FoodDAO;
+import com.renkoglu.ross3.Entities.Food;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,50 +11,50 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
-public class CategoryDAL implements CategoryDAO {
+public class FoodDAL implements FoodDAO {
 
     @Autowired
     private EntityManager entityManager;
 
-    public CategoryDAL(EntityManager entityManager) {
+    public FoodDAL(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
     @Transactional
-    public List<Category> getAll() {
+    public List<Food> getAll() {
         Session session = entityManager.unwrap(Session.class);
-        List<Category> categories= session.createQuery("from Category", Category.class).getResultList();
-        return categories;
+        List<Food> foods= session.createQuery("from Food", Food.class).getResultList();
+        return foods;
     }
 
     @Override
     @Transactional
-    public Category getById(int id) {
+    public Food getById(int id) {
         Session session = entityManager.unwrap(Session.class);
-        Category category = session.get(Category.class, id);
-        return category;
+        Food food = session.get(Food.class, id);
+        return food;
     }
 
     @Override
     @Transactional
-    public void add(Category category) {
+    public void add(Food food) {
         Session session = entityManager.unwrap(Session.class);
-        session.saveOrUpdate(category);
+        session.saveOrUpdate(food);
     }
 
     @Override
     @Transactional
-    public void update(Category category) {
+    public void update(Food food) {
         Session session = entityManager.unwrap(Session.class);
-        session.saveOrUpdate(category);
+        session.saveOrUpdate(food);
     }
 
     @Override
     @Transactional
-    public void delete(Category category) {
+    public void delete(Food food) {
         Session session = entityManager.unwrap(Session.class);
-        Category categoryToDelete = session.get(Category.class, category.getId());
-        session.delete(categoryToDelete);
+        Food foodToDelete = session.get(Food.class, food.getId());
+        session.delete(foodToDelete);
     }
 }
