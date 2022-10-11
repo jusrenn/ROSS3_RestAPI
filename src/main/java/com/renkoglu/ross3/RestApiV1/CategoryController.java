@@ -2,7 +2,6 @@ package com.renkoglu.ross3.RestApiV1;
 
 import com.renkoglu.ross3.Business.IService;
 import com.renkoglu.ross3.Entities.Category;
-import com.renkoglu.ross3.Entities.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
