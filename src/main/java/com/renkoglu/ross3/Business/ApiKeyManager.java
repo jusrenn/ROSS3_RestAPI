@@ -41,4 +41,8 @@ public class ApiKeyManager implements IService<ApiKey> {
     public void delete(ApiKey apiKey) {
         this.apiKeyDal.delete(apiKey);
     }
+
+    public void checkApiKey(String apiKey) {
+        
+    }
 }

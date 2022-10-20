@@ -2,7 +2,6 @@ package com.renkoglu.ross3.DataAccess.Hibernate;
 
 import com.renkoglu.ross3.DataAccess.AdminUserDAO;
 import com.renkoglu.ross3.Entities.AdminUser;
-import com.renkoglu.ross3.Entities.Category;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,7 +24,7 @@ public class AdminUserDAL implements AdminUserDAO {
     @Transactional
     public List<AdminUser> getAll() {
         Session session = entityManager.unwrap(Session.class);
-        List<AdminUser> adminUsers= session.createQuery("from AdminUser", AdminUser.class).getResultList();
+        List<AdminUser> adminUsers = session.createQuery("from AdminUser", AdminUser.class).getResultList();
         return adminUsers;
     }
 
